@@ -11,15 +11,9 @@ var db = new sqlite3.Database('LINE.db')
 
 app.get('/', function (req, res, next) {
     var query = "\
-<<<<<<< HEAD
         SELECT m.message_content,u.user_name\
         FROM message m,user u\
         WHERE m.recipient_id = 2 and m.id1=u.id1\
-=======
-        SELECT group_name\
-        FROM 'group'\
-        WHERE member_id = 3\
->>>>>>> origin/master
         ";
         console.log("DBG:" + query);
     db.all(query, {}, function (err, rows) {
